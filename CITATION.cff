@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "Se este software for utilizado em produção acadêmica, por favor cite-o conforme as informações abaixo."
+title: "GeoPython Assistant v2: Retrieval-Augmented Generation aplicada ao diagnóstico de arquivos geoespaciais e geração de código Python"
+version: 0.2.0
+date-released: 2026-06-22
+authors:
+  - family-names: "Vaz de Melo"
+    given-names: "Pedro Luiz R."
+    affiliation: "Engenharia Florestal e Ciência de Dados Geoespacial"
+repository-code: "https://github.com/PedroLuizskt/GeoPython-Assistant-v2"
+license: MIT
+keywords:
+  - geospatial
+  - rag
+  - llm
+  - geopandas
+  - rasterio
+  - remote-sensing
+  - gis
+  - forestry
+  - python
+  - streamlit
