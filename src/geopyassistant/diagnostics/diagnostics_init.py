@@ -2,17 +2,11 @@
 Subpacote `diagnostics`: contrato e implementacao do diagnostico geoespacial.
 
 Este modulo expoe o API publico do subpacote. Importe daqui em vez de
-referenciar `schema` ou `vector_profiler` diretamente:
+referenciar `schema` diretamente:
 
-    from geopyassistant.diagnostics import VectorProfiler, VectorDiagnostic
-
-Nota de ordem de importacao
----------------------------
-`schema` e importado antes de `vector_profiler` porque o profiler depende dos
-tipos do schema. A ordem inversa causaria erro de resolucao de nomes.
+    from geopyassistant.diagnostics import VectorDiagnostic, GeospatialDiagnostic
 """
 
-# 1) Contrato (schema Pydantic). Deve ser importado primeiro.
 from geopyassistant.diagnostics.schema import (
     DIAGNOSTIC_SCHEMA_VERSION,
     AttributeField,
@@ -33,8 +27,6 @@ from geopyassistant.diagnostics.schema import (
     VectorDiagnostic,
     VectorFileFormat,
 )
-
-# 2) Implementacao (profilers). Depende do schema.
 from geopyassistant.diagnostics.vector_profiler import (
     UnreadableFileError,
     UnsupportedFormatError,
@@ -45,36 +37,28 @@ from geopyassistant.diagnostics.vector_profiler import (
 )
 
 __all__ = [
-    # Constantes
     "DIAGNOSTIC_SCHEMA_VERSION",
-    # Enums
-    "ColorInterpretation",
-    "OGCGeometryType",
-    "RasterFileFormat",
-    "VectorFileFormat",
-    # Modelos comuns
-    "BoundingBox",
-    "CRSInfo",
-    # Modelos vetoriais
     "AttributeField",
     "AttributeSchema",
-    "FeatureInfo",
-    "GeometryInfo",
-    "TopologyInfo",
-    "VectorDiagnostic",
-    # Modelos matriciais
     "BandInfo",
     "BandStatistics",
-    "RasterDiagnostic",
-    "RasterSpatialInfo",
-    # Uniao discriminada
+    "BoundingBox",
+    "CRSInfo",
+    "ColorInterpretation",
+    "FeatureInfo",
+    "GeometryInfo",
     "GeospatialDiagnostic",
-    # Profiler vetorial
-    "VectorProfiler",
-    "VectorProfilerConfig",
-    "profile_vector_file",
-    # Excecoes do profiler
+    "OGCGeometryType",
+    "RasterDiagnostic",
+    "RasterFileFormat",
+    "RasterSpatialInfo",
+    "TopologyInfo",
     "UnreadableFileError",
     "UnsupportedFormatError",
+    "VectorDiagnostic",
+    "VectorFileFormat",
+    "VectorProfiler",
+    "VectorProfilerConfig",
     "VectorProfilerError",
+    "profile_vector_file",
 ]
